@@ -4,23 +4,24 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     include 'multi.php';
-    echo "hejsan";
+    echo "<br>hejsan";
 
-    if($_POST["personNummer"] == null){
-        echo "<p>Skriv in personnummer!</p>";
+    if($_POST["personNummer"] == null && $_SESSION["horoscope"] == null){
+        echo "Skriv in ditt personnummer";
     }
-    else if($_SESSION["horoscopet"]==null){
+
+    elseif($_SESSION['horoscope'] == null){
+        $_SESSION['horoscope'] = getSign($signs);
+        echo "true";
+       
+    }
         
-    }
+}
+else{
+    echo "error";
+}
+
     
-}else{
-        echo "no sign here";
-    }
-
-    if(isset($_POST["personNummer"])){
-      echo getSign($signs);
-
-    }
 
 
 
