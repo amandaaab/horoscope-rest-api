@@ -1,17 +1,15 @@
 $(document).ready(function(){
-
     function viewHoroscope() {
         $.ajax({
           url: "inc/viewHoroscope.php",
           method: "GET",
-         /* data : {
+          data : {
             personNummer: $("#personNummer").val()
-          },*/
+          },
           success: function(msg) {
-              $("#content").html(msg);
+              $("#showHoroscope").html(msg);
           },
       });
-
     }
 
     viewHoroscope();
@@ -54,19 +52,5 @@ $(document).ready(function(){
             }
         });
         viewHoroscope();
-    }
-
-
-
-    /*function viewHoroscope(){
-        $.ajax({
-            url:"inc/viewHoroscope.php",
-            method: "GET",
-
-            success: function(view){
-                $("#showHoroscope").html(view);
-            }
-        });
-    }*/
-    
+    }  
 }); 

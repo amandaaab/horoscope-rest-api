@@ -71,48 +71,15 @@ $signs [] = [
     'end' => '0320',
 ];
 
-function getSign($signs){
-
-    if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        $date = substr($_POST["personNummer"], 0, 6);
-        $fourLastNr = $date[2] . $date[3] . $date[4] . $date[5];
-    }
-
-    if($_SERVER['REQUEST_METHOD'] === 'PUT'){
-        $date = substr($_PUT["personNummer"], 0, 6);
-        $fourLastNr = $date[2] . $date[3] . $date[4] . $date[5];
-    }
-    //$date = substr($_POST["personNummer"], 0, 6);
-    //$fourLastNr = $date[2] . $date[3] . $date[4] . $date[5];
-
+function getSign($signs, $date, $fourLastNr){
     foreach($signs as $sign){
         if($fourLastNr >= $sign['start'] && $fourLastNr <= $sign['end']){
-            $horoscope = $sign['title'];
-            echo   "<br><h2>$horoscope</h2>";
+           $horoscope = $sign['title'];
+            
+           return $horoscope;
+           
         } 
-    }
-
+    }  
 }
-
-// function getSign- tabort funtion, och ta bort date substr från multi och sätt POST i add och PUT i update
-// samma med fourLastNr
-// return foreach?
-
-function updateSign($signs){
-
-    $date = substr($_PUT["personNummer"], 0, 6);
-    $fourLastNr = $date[2] . $date[3] . $date[4] . $date[5];
-
-    foreach($signs as $sign){
-    
-        if($fourLastNr >= $sign['start'] && $fourLastNr <= $sign['end'])
-        {
-            $horoscope = $sign['title'];
-            echo  "<h2>$horoscope</h2>";
-        } 
-    }
-    
-}
-
 
 ?>

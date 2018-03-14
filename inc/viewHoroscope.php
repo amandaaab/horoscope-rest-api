@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
         echo $_SESSION['horoscope'];
     }else{
         echo "ingenting";
-    };
+    }
 }
 
 ?>
