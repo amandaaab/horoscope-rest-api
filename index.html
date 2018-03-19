@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Horoscope rest API</title>
+    <title>Horoscope rest API</title> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Roboto+Mono" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
-    <h2>HOROSKOP</h2>
+    <div class="container">
+        <div class="content">
+            <h1>H O R O S K O P</h1>
+            <div id="showHoroscope"></div>
+        </div>
 
-    <input type="text" id="personNummer" placeholder="ÅÅMMDD"/>
+            <div class="wrap">
+                <div class="inputholder">
+                    <input type="text" id="personNummer" placeholder="Å Å M M D D"/>
+                </div>
 
-    <br><br>
-
-    <button onclick="saveHoroscope()">SPARA</button>
-
-    <button onclick="updateHoroscope()">UPPDATERA</button>
-
-    <button onclick="deleteHoroscope()">RADERA</button>
-
-    <div id="showHoroscope">
-
+                <div class="buttonholder">
+                    <button onclick="saveHoroscope()">SPARA</button>
+                    <button onclick="updateHoroscope()">UPPDATERA</button>
+                    <button onclick="deleteHoroscope()">RADERA</button>
+                </div>
+            </div>
     </div>
 
     <script src="script.js"></script>
-    
 </body>
 </html>

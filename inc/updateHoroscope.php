@@ -10,14 +10,9 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT'){
     if(isset($_SESSION['horoscope'])){
         session_unset();
         echo $_SESSION['horoscope'] = getSign($signs, $date, $fourLastNr);
-    }
-        
-       elseif($_SESSION['horoscope'] == null){
-        $_SESSION['horoscope'] = getSign($signs, $date, $fourLastNr);
-
-       }else{
+    }else{
         echo "Skriv in ditt personnummer";
-       } 
-    }
+    } 
+}
 
 ?>
