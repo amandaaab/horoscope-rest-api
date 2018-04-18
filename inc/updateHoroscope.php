@@ -9,9 +9,10 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT'){
 
     if(isset($_SESSION['horoscope'])){
         session_unset();
-        echo $_SESSION['horoscope'] = getSign($signs, $date, $fourLastNr);
+        $_SESSION['horoscope'] = getSign($signs, $date, $fourLastNr);
+        echo true;
     }else{
-        echo "Skriv in ditt personnummer";
+        echo false;
     } 
 }
 

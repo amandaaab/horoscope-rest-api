@@ -8,9 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(!isset($_SESSION['horoscope'])){
         $_SESSION['horoscope'] = getSign($signs, $date, $fourLastNr);
-        echo  $_SESSION['horoscope'];
+        echo true;
     }else{
-    echo "error";
+    echo false;
     }
 }
 

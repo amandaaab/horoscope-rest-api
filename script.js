@@ -12,7 +12,7 @@ $(document).ready(function(){
       });
     }
 
-    viewHoroscope();
+   viewHoroscope();
    
     saveHoroscope = function(){
         $.ajax({
@@ -23,9 +23,9 @@ $(document).ready(function(){
             },
             success: function(msg){
                $("#showHoroscope").html(msg);
-            }
+               viewHoroscope();
+            }  
         });
-        viewHoroscope();
     }
 
     updateHoroscope = function(){
@@ -36,10 +36,11 @@ $(document).ready(function(){
                 personNummer: $("#personNummer").val()
             },
             success: function(msg){
-                $("#showHoroscope").html(msg);
+                $("#showHoroscope").html(msg);  
+                viewHoroscope();
             }
         });
-        viewHoroscope();
+      
     }
 
     deleteHoroscope = function(){
@@ -49,8 +50,9 @@ $(document).ready(function(){
     
             success: function(msg){
                $("#showHoroscope").html(msg);
+                viewHoroscope();
             }
         });
-        viewHoroscope();
+       
     }  
 }); 
